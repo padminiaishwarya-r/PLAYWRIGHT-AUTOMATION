@@ -1,7 +1,12 @@
 node_modules/
-.playwright/
 playwright-report/
+test-results/
+blob-report/
+trace.zip
+videos/
+screenshots/
 .env
-.vscode/
-coverage/
+.env.*
 *.log
+.DS_Store
+allure-results/
