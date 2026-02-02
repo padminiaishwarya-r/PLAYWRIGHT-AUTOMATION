@@ -1,0 +1,28 @@
+{
+  "name": "playwright-esm-framework",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "npx playwright test",
+    "report:email": "node sendReport.js",
+    "test:email": "npx playwright test || true && node sendReportWithSummary.js",
+    "test:headed": "playwright test --headed",
+    "test:report": "npx playwright test && node sendReportWithSummary.js",
+    "test:chromium": "playwright test --project=Chromium",
+    "test:mobile-safari": "playwright test --project=\"Mobile Safari\"",
+    "install:playwright:browsers": "npx playwright install"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "allure-commandline": "^2.34.1",
+    "allure-playwright": "^3.4.2",
+    "chrome-launcher": "^1.2.1",
+    "lighthouse": "^12.8.2",
+    "playwright": "^1.57.0"
+  },
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "dotenv": "^17.2.3",
+    "nodemailer": "^7.0.10"
+  }
+}

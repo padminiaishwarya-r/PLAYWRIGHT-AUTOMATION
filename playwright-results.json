@@ -1,0 +1,202 @@
+{
+  "config": {
+    "configFile": "/Users/padminir/Desktop/playwright-automation/playwright.config.js",
+    "rootDir": "/Users/padminir/Desktop/playwright-automation/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/padminir/Desktop/playwright-automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Chrome",
+        "name": "Chrome",
+        "testDir": "/Users/padminir/Desktop/playwright-automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 120000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 5,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "website/login.spec.js",
+      "file": "website/login.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "web: Add product from Rings category",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Chrome",
+              "projectName": "Chrome",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 121437,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 120000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 120000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 120000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/padminir/Desktop/playwright-automation/pages/ListingPage.js",
+                        "column": 27,
+                        "line": 22
+                      },
+                      "message": "Error: browserContext.waitForEvent: Test timeout of 120000ms exceeded.\n\n   at ../pages/ListingPage.js:22\n\n  20 |\n  21 |     const [newPage] = await Promise.all([\n> 22 |       this.page.context().waitForEvent('page'),\n     |                           ^\n  23 |       selected.locator('a.product-item-link').click()\n  24 |     ]);\n  25 |\n    at ListingPage.openRandomProduct (/Users/padminir/Desktop/playwright-automation/pages/ListingPage.js:22:27)\n    at /Users/padminir/Desktop/playwright-automation/tests/website/login.spec.js:21:26"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "👤 Opening login...\n"
+                    },
+                    {
+                      "text": "🔐 Logging in...\n"
+                    },
+                    {
+                      "text": "💍 Going to Rings category...\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-11-27T10:47:12.961Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/padminir/Desktop/playwright-automation/test-results/website-login-web-Add-product-from-Rings-category-Chrome/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/padminir/Desktop/playwright-automation/test-results/website-login-web-Add-product-from-Rings-category-Chrome/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/padminir/Desktop/playwright-automation/test-results/website-login-web-Add-product-from-Rings-category-Chrome/trace.zip"
+                    }
+                  ]
+                },
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 121433,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 120000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 120000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 120000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "/Users/padminir/Desktop/playwright-automation/pages/ListingPage.js",
+                        "column": 27,
+                        "line": 22
+                      },
+                      "message": "Error: browserContext.waitForEvent: Test timeout of 120000ms exceeded.\n\n   at ../pages/ListingPage.js:22\n\n  20 |\n  21 |     const [newPage] = await Promise.all([\n> 22 |       this.page.context().waitForEvent('page'),\n     |                           ^\n  23 |       selected.locator('a.product-item-link').click()\n  24 |     ]);\n  25 |\n    at ListingPage.openRandomProduct (/Users/padminir/Desktop/playwright-automation/pages/ListingPage.js:22:27)\n    at /Users/padminir/Desktop/playwright-automation/tests/website/login.spec.js:21:26"
+                    }
+                  ],
+                  "stdout": [
+                    {
+                      "text": "Opening login...\n"
+                    },
+                    {
+                      "text": "Logging in...\n"
+                    },
+                    {
+                      "text": "Going to Rings category...\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 1,
+                  "startTime": "2025-11-27T10:49:16.633Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/padminir/Desktop/playwright-automation/test-results/website-login-web-Add-product-from-Rings-category-Chrome-retry1/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/padminir/Desktop/playwright-automation/test-results/website-login-web-Add-product-from-Rings-category-Chrome-retry1/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/padminir/Desktop/playwright-automation/test-results/website-login-web-Add-product-from-Rings-category-Chrome-retry1/trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "66444fa98601d051bd5a-b1a204a66148468a7a1f",
+          "file": "website/login.spec.js",
+          "line": 12,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-11-27T10:47:12.728Z",
+    "duration": 246938.99300000002,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}
