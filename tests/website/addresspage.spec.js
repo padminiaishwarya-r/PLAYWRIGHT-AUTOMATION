@@ -10,15 +10,18 @@ import { saveWebVitals } from '../../utils/webvitalsStore.js';
 
 test.describe("Address Page", () => {
 
-  test("TC_01 Enter Billing Address and Continue to Payment", async ({ page }) => {
+  test.only("TC_01 Enter Billing Address and Continue to Payment", async ({ page }) => {
     const login = new LoginPage(page);
     const home = new HomePage(page);
     const listing = new ListingPage(page);
-    await page.goto("https://www.caratlane.us");
+    await page.goto('/');
     await home.acceptCookies();
     await new WebEngagePopup(page).closePopup();
     await home.openLogin();
-    await login.login("automationtesting1@mailinator.com", "Carat567@");
+    await login.login(
+      process.env.LOGIN_EMAIL,
+      process.env.LOGIN_PASSWORD
+    );
     await new WebEngagePopup(page).closePopup();
     await home.goToRings();
     await new WebEngagePopup(page).closePopup();
@@ -58,15 +61,18 @@ test.describe("Address Page", () => {
     
   });
 
-  test("TC_02 Continue to Payment without filling address should show errors", async ({ page }) => {
+  test.only("TC_02 Continue to Payment without filling address should show errors", async ({ page }) => {
     const login = new LoginPage(page);
     const home = new HomePage(page);
     const listing = new ListingPage(page);
-    await page.goto("https://www.caratlane.us");
+    await page.goto('/');
     await home.acceptCookies();
     await new WebEngagePopup(page).closePopup();
     await home.openLogin();
-    await login.login("automationtesting1@mailinator.com", "Carat567@");
+    await login.login(
+      process.env.LOGIN_EMAIL,
+      process.env.LOGIN_PASSWORD
+    );
     await new WebEngagePopup(page).closePopup();
     await home.goToRings();
     await new WebEngagePopup(page).closePopup();
@@ -95,15 +101,18 @@ test.describe("Address Page", () => {
   });
 
 
-  test('web: TC_03 Adding Shipping Address alone', async ({ page }) => {
+  test.only('web: TC_03 Adding Shipping Address alone', async ({ page }) => {
     const login = new LoginPage(page);
     const home = new HomePage(page);
     const listing = new ListingPage(page);
-    await page.goto("https://www.caratlane.us");
+    await page.goto('/');
     await home.acceptCookies();
     await new WebEngagePopup(page).closePopup();
     await home.openLogin();
-    await login.login("automationtesting1@mailinator.com", "Carat567@");
+    await login.login(
+      process.env.LOGIN_EMAIL,
+      process.env.LOGIN_PASSWORD
+    );   
     await new WebEngagePopup(page).closePopup();
     await home.goToRings();
     await new WebEngagePopup(page).closePopup();
@@ -135,15 +144,18 @@ test.describe("Address Page", () => {
     await addressPage.continueToPayment();
 })
 
-test('web: TC_04 Adding Billing address alone', async ({ page }) => {
+test.only('web: TC_04 Adding Billing address alone', async ({ page }) => {
     const login = new LoginPage(page);
     const home = new HomePage(page);
     const listing = new ListingPage(page);
-    await page.goto("https://www.caratlane.us");
+    await page.goto('/');
     await home.acceptCookies();
     await new WebEngagePopup(page).closePopup();
     await home.openLogin();
-    await login.login("automationtesting1@mailinator.com", "Carat567@");
+    await login.login(
+      process.env.LOGIN_EMAIL,
+      process.env.LOGIN_PASSWORD
+    );
     await new WebEngagePopup(page).closePopup();
     await home.goToRings();
     await new WebEngagePopup(page).closePopup();

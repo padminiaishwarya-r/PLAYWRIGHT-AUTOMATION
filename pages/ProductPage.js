@@ -113,27 +113,44 @@ export default class ProductPage {
   }
     
   async proceedToCheckout() {
-      await this.closeBlockers();
+    await this.closeBlockers();
+  
     console.log("Opening mini-cart…");
-      try {
-        await this.miniCartButton.click();
-      } catch {
-        await this.closeBlockers();
-        await this.miniCartButton.click({ force: true });
+  
+    // Open mini-cart safely
+    await this.miniCartButton.click();
+  
+    const miniCart = this.page.locator('.block-minicart');
+  
+    // Wait for minicart to be fully visible
+    await miniCart.waitFor({ state: 'visible', timeout: 30000 });
+  
+    // Wait until knockout finishes rendering items
+    await this.page.waitForLoadState('networkidle');
+  
+    // Wait until the Proceed/View Cart button is attached in DOM
+    const viewCartBtn = this.page.locator(
+      '#viewCartbtn, a.action.viewcart'
+    );
+  
+    await viewCartBtn.waitFor({ state: 'attached', timeout: 10000 });
+  
+    // Ensure it is actually clickable
+    await viewCartBtn.scrollIntoViewIfNeeded();
+  
+    try {
+      await viewCartBtn.click({ timeout: 8000 });
+      console.log("Clicked Proceed to Shopping Cart");
+    }       catch {
+        console.log("Mini-cart click failed, navigating directly");
+      
+        const origin = new URL(this.page.url()).origin;
+        await this.page.goto(`${origin}/checkout/cart/`);
       }
-    const drawer = this.page.locator('.block-minicart');
-      try {
-        await drawer.waitFor({ state: "visible", timeout: 6000 });
-    console.log("Mini-cart opened!");
-        const viewCart = this.page.locator('#viewCartbtn');
-        await viewCart.waitFor({ state: "visible", timeout: 6000 });
-        await viewCart.click({ force: true });
-      } catch {
-    console.log("Mini-cart failed, going directly to cart page");
-        await this.page.goto("https://www.caratlane.us/checkout/cart/");
-    }
-      await this.page.waitForLoadState("domcontentloaded");
+          
+    await this.page.waitForLoadState('domcontentloaded');
   }
+  
 
   async verifyShareFunctionality() {
     console.log("Clicking Share icon…");

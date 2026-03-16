@@ -8,7 +8,7 @@ import { loginTestData } from '../../test-data/loginData';
     test.beforeEach(async ({ page }) => {
       const home = new HomePage(page);
       const webEngage = new WebEngagePopup(page);
-      await page.goto('https://www.caratlane.us', {
+      await page.goto('/', {
         waitUntil: 'domcontentloaded'
       });
       await home.acceptCookies();

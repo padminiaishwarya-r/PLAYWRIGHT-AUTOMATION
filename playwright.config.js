@@ -1,9 +1,17 @@
 import { defineConfig } from '@playwright/test';
+import dotenv from 'dotenv';
+
+const ENV = process.env.ENV || 'live';
+
+dotenv.config({ path: '.env.live' });
+
+
+console.log(`🚀 Running tests on: ${ENV.toUpperCase()}`);
 
 export default defineConfig({
   testDir: './tests',
-  timeout: 120000,
-  retries: 1,
+  timeout: 180000,
+  retries: 0,
   workers: 1,
 
   reporter: [
@@ -15,6 +23,7 @@ export default defineConfig({
 
   use: {
     headless: true,
+    baseURL: process.env.BASE_URL, // 🔑 THIS IS REQUIRED
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     trace: 'retain-on-failure',

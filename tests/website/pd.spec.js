@@ -9,7 +9,7 @@ import { saveWebVitals } from '../../utils/webvitalsStore.js';
       test('web: TC_01 Add product to Wishlist', async ({ page }) => {
         const home = new HomePage(page);
         const listing = new ListingPage(page);
-        await page.goto("https://www.caratlane.us");
+        await page.goto('/');
         await home.acceptCookies();
         await home.goToRings();
         const listingPopup = new WebEngagePopup(page);
@@ -35,7 +35,7 @@ import { saveWebVitals } from '../../utils/webvitalsStore.js';
         test('web: TC_02 Check Share Functionality', async ({ page }) => {
             const home = new HomePage(page);
             const listing = new ListingPage(page);
-            await page.goto("https://www.caratlane.us");
+            await page.goto('/');
             await home.acceptCookies();
             await home.goToRings();
             const listingPopup = new WebEngagePopup(page);
@@ -60,7 +60,7 @@ import { saveWebVitals } from '../../utils/webvitalsStore.js';
         test('web: TC_03 Check Similar Items Functionality', async ({ page }) => {
             const home = new HomePage(page);
             const listing = new ListingPage(page);
-            await page.goto("https://www.caratlane.us");
+            await page.goto('/');
             await home.acceptCookies();
             await home.goToRings();
             const listingPopup = new WebEngagePopup(page);
@@ -85,7 +85,7 @@ import { saveWebVitals } from '../../utils/webvitalsStore.js';
         test('web: TC_04 Check Trending Items Functionality', async ({ page }) => {
             const home = new HomePage(page);
             const listing = new ListingPage(page);
-            await page.goto("https://www.caratlane.us");
+            await page.goto('/');
             await home.acceptCookies();
             await home.goToRings();
              const listingPopup = new WebEngagePopup(page);
@@ -110,7 +110,7 @@ import { saveWebVitals } from '../../utils/webvitalsStore.js';
         test('web: TC_05 Check Product Design Details  Functionality', async ({ page }) => {
             const home = new HomePage(page);
             const listing = new ListingPage(page);
-            await page.goto("https://www.caratlane.us");
+            await page.goto('/');
             await home.acceptCookies();
             await home.goToRings();
             const listingPopup = new WebEngagePopup(page);
@@ -135,7 +135,7 @@ import { saveWebVitals } from '../../utils/webvitalsStore.js';
         test('web: TC_06 Check Product Customization Functionality', async ({ page }) => {
             const home = new HomePage(page);
             const listing = new ListingPage(page);
-            await page.goto("https://www.caratlane.us");
+            await page.goto('/');
             await home.acceptCookies();
            await home.goToRings();
            const listingPopup = new WebEngagePopup(page);
@@ -162,7 +162,7 @@ import { saveWebVitals } from '../../utils/webvitalsStore.js';
         test('web: TC_07 Check Mini PoP! Functionality', async ({ page }) => {
             const home = new HomePage(page);
             const listing = new ListingPage(page);
-            await page.goto("https://www.caratlane.us");
+            await page.goto('/');
             await home.acceptCookies();
            await home.goToRings();
            const listingPopup = new WebEngagePopup(page);
@@ -188,7 +188,7 @@ import { saveWebVitals } from '../../utils/webvitalsStore.js';
         test('web: TC_08 Check Mini PoP! start your trial Functionality', async ({ page }) => {
             const home = new HomePage(page);
             const listing = new ListingPage(page);
-            await page.goto("https://www.caratlane.us");
+            await page.goto('/');
             await home.acceptCookies();
            await home.goToRings();
            const listingPopup = new WebEngagePopup(page);

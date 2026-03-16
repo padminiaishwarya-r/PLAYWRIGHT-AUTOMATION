@@ -14,12 +14,14 @@ import { saveWebVitals } from '../../utils/webvitalsStore.js';
     const login = new LoginPage(page);
     const home = new HomePage(page);
     const listing = new ListingPage(page);
-    await page.goto("https://www.caratlane.us");
+    await page.goto('/');
     await home.acceptCookies();
     await new WebEngagePopup(page).closePopup();
     await home.openLogin();
-    await login.login("automationtesting1@mailinator.com", "Carat567@");
-    await new WebEngagePopup(page).closePopup();
+    await login.login(
+      process.env.LOGIN_EMAIL,
+      process.env.LOGIN_PASSWORD
+    );    await new WebEngagePopup(page).closePopup();
     await home.goToRings();
     await new WebEngagePopup(page).closePopup();
     const [productPageTab] = await Promise.all([

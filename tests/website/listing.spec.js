@@ -9,7 +9,7 @@ import { saveWebVitals } from '../../utils/webvitalsStore.js';
         test('web: TC_01 Open Random Product in Listing', async ({ page }) => {
             const home = new HomePage(page);
             const listing = new ListingPage(page);
-            await page.goto("https://www.caratlane.us");
+            await page.goto('/');
             await home.acceptCookies();
             await home.goToRings();
             await new WebEngagePopup(page).closePopup();
@@ -23,7 +23,7 @@ import { saveWebVitals } from '../../utils/webvitalsStore.js';
         test('web: TC_02 Click Wishlist for a random product as Guest User', async ({ page }) => {
             const home = new HomePage(page);
             const listing = new ListingPage(page);
-            await page.goto("https://www.caratlane.us");
+            await page.goto('/');
             await home.acceptCookies();
             await home.goToRings();
             await new WebEngagePopup(page).closePopup();              
@@ -37,7 +37,7 @@ import { saveWebVitals } from '../../utils/webvitalsStore.js';
         test('web: TC_03 Verify SortBy Section', async ({ page }) => {
             const home = new HomePage(page);
             const listing = new ListingPage(page);
-            await page.goto("https://www.caratlane.us");
+            await page.goto('/');
             await home.acceptCookies();
             await home.goToRings();
             await new WebEngagePopup(page).closePopup();
@@ -51,7 +51,7 @@ import { saveWebVitals } from '../../utils/webvitalsStore.js';
         test("web: TC_04 Verify Filters Section", async ({ page }) => {
             const home = new HomePage(page);
             const listing = new ListingPage(page);
-            await page.goto("https://www.caratlane.us");
+            await page.goto('/');
             await home.acceptCookies();
             await home.goToRings();
             await new WebEngagePopup(page).closePopup();
@@ -68,7 +68,7 @@ import { saveWebVitals } from '../../utils/webvitalsStore.js';
           test('web: TC_05 Click Live Video Call CTA', async ({ page }) => {
             const home = new HomePage(page);
             const listing = new ListingPage(page);
-            await page.goto("https://www.caratlane.us");
+            await page.goto('/');
             await home.acceptCookies();
             await home.goToRings();
             await new WebEngagePopup(page).closePopup();

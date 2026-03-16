@@ -10,3 +10,5 @@ screenshots/
 *.log
 .DS_Store
 allure-results/
+/tests\/magento\/.*/
+
